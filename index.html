@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Expert & Digital Growth Specialist | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#D90429',
+                            redHover: '#EF233C',
+                            darkBg: '#0B0B0D',
+                            cardBg: '#121216',
+                            cardBorder: '#22222A',
+                            muted: '#A0A0AB',
+                            lightBg: '#F8F9FA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Hind Siliguri', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chart.js for Ranking Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            background-color: #0B0B0D;
+            color: #FFFFFF;
+        }
+        
+        .glass-panel {
+            background: rgba(18, 18, 22, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glow-red {
+            box-shadow: 0 0 25px rgba(217, 4, 41, 0.35);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 30%, #D90429 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #22222A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D90429;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-brand-cardBorder/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center font-bold text-xl text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    S
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-wider block text-white">SEO<span class="text-brand-red">EXPERT</span></span>
+                    <span class="text-[10px] text-brand-muted tracking-widest uppercase block -mt-1">Organic Growth Specialist</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="hover:text-brand-red transition-colors duration-200">Home</a>
+                <a href="#about" class="hover:text-brand-red transition-colors duration-200">About</a>
+                <a href="#services" class="hover:text-brand-red transition-colors duration-200">Services</a>
+                <a href="#audit-tool" class="hover:text-brand-red transition-colors duration-200 text-brand-red font-semibold"><i class="fa-solid fa-bolt mr-1"></i>Free Audit Tool</a>
+                <a href="#results" class="hover:text-brand-red transition-colors duration-200">Case Studies</a>
+                <a href="#pricing" class="hover:text-brand-red transition-colors duration-200">Packages</a>
+                <a href="#contact" class="hover:text-brand-red transition-colors duration-200">Contact</a>
+            </nav>
+
+            <!-- CTA Buttons Header -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:01836981845" class="text-sm font-medium text-white hover:text-brand-red transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-brand-red"></i> 01836981845
+                </a>
+                <a href="https://wa.me/8801836981845" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-redHover text-white text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-brand-red/40 hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Direct Chat
+                </a>
+            </div>
+
+            <!-- Mobile Menu Trigger Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl text-white hover:text-brand-red focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-b border-brand-cardBorder px-6 py-6 space-y-4">
+            <a href="#home" class="mobile-nav-link block text-lg font-medium hover:text-brand-red">Home</a>
+            <a href="#about" class="mobile-nav-link block text-lg font-medium hover:text-brand-red">About Me</a>
+            <a href="#services" class="mobile-nav-link block text-lg font-medium hover:text-brand-red">Services</a>
+            <a href="#audit-tool" class="mobile-nav-link block text-lg font-medium text-brand-red"><i class="fa-solid fa-bolt mr-2"></i>Free SEO Audit Tool</a>
+            <a href="#results" class="mobile-nav-link block text-lg font-medium hover:text-brand-red">Case Studies</a>
+            <a href="#pricing" class="mobile-nav-link block text-lg font-medium hover:text-brand-red">Packages</a>
+            <a href="#contact" class="mobile-nav-link block text-lg font-medium hover:text-brand-red">Contact</a>
+            
+            <div class="pt-4 border-t border-brand-cardBorder flex flex-col gap-3">
+                <a href="tel:01836981845" class="w-full py-3 text-center rounded-xl bg-brand-cardBg border border-brand-cardBorder font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-brand-red"></i> Call 01836981845
+                </a>
+                <a href="https://wa.me/8801836981845" target="_blank" class="w-full py-3 text-center rounded-xl bg-brand-red font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Consult
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <!-- Radial Gradient Background Layer -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-red/15 rounded-full blur-[130px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-red/30 text-xs sm:text-sm font-semibold text-white">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse"></span>
+                        ১ নম্বর র‍্যাংকিং ও অর্গানিক ট্রাফিকের গ্যারান্টিড স্ট্র্যাটেজি
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        I Help Businesses <br class="hidden sm:inline">
+                        <span class="text-gradient">Rank #1 on Google</span> <br>
+                        & Drive Organic Revenue
+                    </h1>
+
+                    <p class="text-brand-muted text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        আমি একজন সার্টিফাইড SEO Expert। এডভান্সড Technical SEO, Dynamic Link Building এবং Data-Driven Keyword Strategy ব্যবহার করে আপনার ওয়েবসাইটকে গুগল সার্চের শীর্ষে নিয়ে আসতে সাহায্য করি।
+                    </p>
+
+                    <!-- Dual Call To Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#audit-tool" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-redHover text-white font-bold text-center transition-all duration-300 shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-chart-line"></i> Free SEO Audit করুন
+                        </a>
+                        <a href="https://wa.me/8801836981845?text=Hello,%20I%20want%20to%20discuss%20my%20website%20SEO." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel border border-brand-cardBorder hover:border-brand-red/50 text-white font-semibold text-center transition-all duration-300 hover:bg-white/5 flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-xl"></i> Hire Me / WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Key Metrics Counter -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-brand-cardBorder/80 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">50+</h3>
+                            <p class="text-xs sm:text-sm text-brand-muted font-medium">Websites Ranked</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-red">300%</h3>
+                            <p class="text-xs sm:text-sm text-brand-muted font-medium">Avg ROI Organic</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">5+ Yrs</h3>
+                            <p class="text-xs sm:text-sm text-brand-muted font-medium">Experience</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Clean Profile Image Hero Card (Analytics Chart Removed) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative max-w-md mx-auto">
+                        <!-- Red Glowing Backdrop -->
+                        <div class="absolute inset-0 bg-brand-red/30 rounded-3xl blur-3xl transform rotate-2"></div>
+                        
+                        <!-- Main Image Container -->
+                        <div class="relative glass-panel p-4 rounded-3xl border border-brand-red/40 glow-red overflow-hidden shadow-2xl">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-black">
+                                <img src="https://raw.githubusercontent.com/mahfuzbdasia12/test-port/refs/heads/main/mafhuz-bd-asia.jpg" alt="SEO Expert Profile Image" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500">
+                                
+                                <!-- Floating Top-Left Badge -->
+                                <div class="absolute top-4 left-4 glass-panel px-3 py-2 rounded-xl border border-white/10 flex items-center gap-2 shadow-lg">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                                    <span class="text-xs font-bold text-white tracking-wide">#1 Rank Specialist</span>
+                                </div>
+
+                                <!-- Floating Top-Right Badge -->
+                                <div class="absolute top-4 right-4 glass-panel px-3 py-2 rounded-xl border border-brand-red/40 bg-black/60 shadow-lg">
+                                    <span class="text-xs font-bold text-brand-red"><i class="fa-solid fa-award mr-1"></i> 98% Success</span>
+                                </div>
+
+                                <!-- Floating Bottom Card Overlay -->
+                                <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-2xl border border-white/15 backdrop-blur-md">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-[10px] text-brand-muted uppercase tracking-wider font-semibold">Direct Hotline</p>
+                                            <a href="tel:01836981845" class="text-sm font-extrabold text-white hover:text-brand-red transition-colors flex items-center gap-1.5 mt-0.5">
+                                                <i class="fa-solid fa-phone text-brand-red"></i> 01836981845
+                                            </a>
+                                        </div>
+                                        <a href="https://wa.me/8801836981845" target="_blank" class="px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold transition-transform duration-200 hover:scale-105 flex items-center gap-1.5 shadow-md">
+                                            <i class="fa-brands fa-whatsapp text-sm"></i> Chat Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Floating Badge Below Profile -->
+                        <div class="mt-4 p-3 rounded-2xl glass-panel border border-brand-cardBorder flex items-center justify-around text-center text-xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-bullseye text-brand-red"></i>
+                                <span class="font-semibold text-white">Targeted Leads</span>
+                            </div>
+                            <div class="h-4 w-px bg-brand-cardBorder"></div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-emerald-400"></i>
+                                <span class="font-semibold text-white">Organic Traffic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-brand-cardBg/40 border-y border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Profile Image / Graphic -->
+                <div class="lg:col-span-5 relative">
+                    <div class="w-full h-auto aspect-square rounded-3xl overflow-hidden glass-panel border border-brand-cardBorder p-4 relative group">
+                        <div class="w-full h-full rounded-2xl bg-gradient-to-br from-brand-cardBg via-black to-brand-red/20 flex flex-col justify-between p-8 relative overflow-hidden border border-brand-cardBorder">
+                            <div class="space-y-2">
+                                <span class="text-brand-red text-sm font-semibold tracking-widest uppercase">Expertise Profile</span>
+                                <h3 class="text-3xl font-extrabold text-white">Results Driven SEO Specialist</h3>
+                            </div>
+                            
+                            <div class="my-auto py-6">
+                                <i class="fa-solid fa-magnifying-glass-chart text-7xl text-brand-red/40 group-hover:scale-110 transition-transform duration-500"></i>
+                            </div>
+
+                            <div class="p-4 rounded-xl glass-panel border border-white/10">
+                                <p class="text-xs text-brand-muted">Direct Phone / Hotline:</p>
+                                <p class="text-xl font-bold text-white tracking-wide flex items-center gap-2">
+                                    <i class="fa-solid fa-phone text-brand-red"></i> 01836981845
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Bio & Skill Breakdown -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-brand-red font-bold text-sm tracking-widest uppercase">About Me</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        আপনার ব্যবসাকে গুগলের প্রথম পাতায় নিয়ে আসার জন্য আমি প্রতিশ্রুতিবদ্ধ।
+                    </h2>
+                    <p class="text-brand-muted text-base leading-relaxed">
+                        আমি একজন প্রফেশনাল SEO Specialist। গত ৫ বছরের বেশি সময় ধরে দেশি ও আন্তর্জাতিক বিভিন্ন ই-কমার্স, লোকাল বিজনেস ও সার্ভিস ভিত্তিক ওয়েবসাইটের জন্য অর্গানিক গ্রোথ জেনারেট করে আসছি। অ্যালগরিদম আপডেট বুঝে ডেটা-ভিত্তিক SEO স্ট্র্যাটেজি তৈরি করা আমার মূল শক্তি।
+                    </p>
+
+                    <!-- Skills Matrix -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl glass-panel border border-brand-cardBorder hover:border-brand-red/40 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-gear"></i>
+                                </div>
+                                <h4 class="font-bold text-white">Technical SEO</h4>
+                            </div>
+                            <p class="text-xs text-brand-muted">Site Speed, Core Web Vitals, Crawlability, Schema Markup Optimization.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-panel border border-brand-cardBorder hover:border-brand-red/40 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-file-code"></i>
+                                </div>
+                                <h4 class="font-bold text-white">On-Page Optimization</h4>
+                            </div>
+                            <p class="text-xs text-brand-muted">Content Optimization, Title & Meta Description, Internal Linking structure.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-panel border border-brand-cardBorder hover:border-brand-red/40 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-link"></i>
+                                </div>
+                                <h4 class="font-bold text-white">Off-Page & Authority</h4>
+                            </div>
+                            <p class="text-xs text-brand-muted">High DR Backlinks, Guest Posting, Digital PR, Brand Authority Building.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-panel border border-brand-cardBorder hover:border-brand-red/40 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h4 class="font-bold text-white">Local SEO & GBP</h4>
+                            </div>
+                            <p class="text-xs text-brand-muted">Google Map Pack Ranking, Citations, Local Lead Generation.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered Section -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-red font-bold text-sm tracking-widest uppercase">My Services</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    আপনার বিজনেসের জন্য স্পেশালাইজড SEO সার্ভিসেস
+                </h2>
+                <p class="text-brand-muted text-base">
+                    আপনার বিজনেসের টাইপ অনুযায়ী কাস্টমাইজড এসইও সলিউশন যা নিশ্চিত করবে লং-টার্ম সার্চ রেজাল্ট এবং ক্রমাগত অর্গানিক রেভিনিউ।
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">On-Page SEO Optimization</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        আপনার প্রতিটি পেজের কন্টেন্ট, মেটা ট্যাগ, হেডার ট্যাগ এবং ইউআরএল স্ট্রাকচার সার্চ ইঞ্জিনের উপযোগী করে সাজানো হয়।
+                    </p>
+                    <ul class="space-y-2 text-xs text-brand-muted border-t border-brand-cardBorder/60 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Keyword Placement & Density</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Search Intent Content Formatting</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Off-Page SEO & Backlinks</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        হাই-কোয়ালিটি ও নিস-রেলেভেন্ট ব্যাকলিংক তৈরির মাধ্যমে সাইটের ডোমেইন অথরিটি এবং ট্রাস্ট স্কোর বৃদ্ধি করা হয়।
+                    </p>
+                    <ul class="space-y-2 text-xs text-brand-muted border-t border-brand-cardBorder/60 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Editorial Guest Posts</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Safe & White-Hat Link Building</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Technical SEO & Speed</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        ওয়েবসাইটের স্পিড বাড়ানো, ক্রলিং ও ইন্ডেক্সিং সমস্যার সমাধান করে Google Core Web Vitals ঠিক করা।
+                    </p>
+                    <ul class="space-y-2 text-xs text-brand-muted border-t border-brand-cardBorder/60 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Site Speed Optimization</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Schema Org & XML Sitemap</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Local SEO & Google Business Profile</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        আপনার শহরের আশেপাশের কাস্টমারদের সরাসরি আপনার শপ বা অফিসে নিয়ে আসার জন্য Local Map Pack SEO।
+                    </p>
+                    <ul class="space-y-2 text-xs text-brand-muted border-t border-brand-cardBorder/60 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Google Business Profile Optimization</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Local Citations & Review Building</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Keyword Research & Content</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        কম কম্পিটিশন কিন্তু বেশি কনভার্সন দেওয়া কিওয়ার্ড রিসার্চ এবং সার্চ ইন্টেন্ট কেন্দ্রিক কন্টেন্ট প্ল্যানিং।
+                    </p>
+                    <ul class="space-y-2 text-xs text-brand-muted border-t border-brand-cardBorder/60 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Low Competition High ROI Keywords</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Content Gap Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">E-commerce & Shopify SEO</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                        অনলাইন স্টোর ও প্রোডাক্ট পেজ গুগলে র‍্যাংক করিয়ে সরাসরি অনলাইন সেলস বহুলাংশে বৃদ্ধি করা।
+                    </p>
+                    <ul class="space-y-2 text-xs text-brand-muted border-t border-brand-cardBorder/60 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Product Category Optimization</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> E-commerce Rich Snippets & Schema</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive SEO Audit Simulator Tool -->
+    <section id="audit-tool" class="py-20 bg-gradient-to-b from-black via-brand-cardBg to-black relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-red/40 glow-red relative overflow-hidden">
+                
+                <div class="text-center space-y-4 max-w-2xl mx-auto mb-10">
+                    <span class="px-3 py-1 rounded-full bg-brand-red/20 text-brand-red text-xs font-bold uppercase tracking-wider">
+                        Free SEO Audit Tool
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        ফ্রি ইনস্ট্যান্ট ওয়েবাসাইট এসইও হেলথ চেক
+                    </h2>
+                    <p class="text-brand-muted text-sm">
+                        আপনার ওয়েবসাইটের ইউআরএল এবং মেইন কিওয়ার্ড দিন, আমাদের ইন্টারেক্টিভ সিমুলেটর সাথে সাথে SEO স্কোর হিসাব করে সাজেস্ট করবে।
+                    </p>
+                </div>
+
+                <!-- Input Form -->
+                <form id="auditForm" onsubmit="runAuditSimulation(event)" class="grid sm:grid-cols-12 gap-4">
+                    <div class="sm:col-span-5">
+                        <label class="block text-xs text-brand-muted font-medium mb-1">Website URL</label>
+                        <input type="url" id="auditUrl" required placeholder="https://yourwebsite.com" class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-brand-cardBorder text-white placeholder-zinc-600 focus:outline-none focus:border-brand-red text-sm">
+                    </div>
+
+                    <div class="sm:col-span-4">
+                        <label class="block text-xs text-brand-muted font-medium mb-1">Target Keyword</label>
+                        <input type="text" id="auditKeyword" required placeholder="e.g. Best Shoes BD" class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-brand-cardBorder text-white placeholder-zinc-600 focus:outline-none focus:border-brand-red text-sm">
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-end">
+                        <button type="submit" id="auditBtn" class="w-full py-3.5 rounded-xl bg-brand-red hover:bg-brand-redHover font-bold text-white text-sm transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Analyze Now</span> <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Audit Results Area (Initially Hidden) -->
+                <div id="auditResults" class="hidden mt-10 pt-8 border-t border-brand-cardBorder space-y-6">
+                    
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-black/40 border border-brand-cardBorder">
+                        
+                        <div class="flex items-center gap-6">
+                            <!-- Circular Score Visual -->
+                            <div class="relative w-24 h-24 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <path class="text-zinc-800" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path id="scoreCircle" class="text-brand-red" stroke-dasharray="0, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span id="scoreText" class="absolute text-2xl font-extrabold text-white">0%</span>
+                            </div>
+
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1" id="analyzedDomain">yourwebsite.com</h4>
+                                <p class="text-xs text-brand-muted">Target Keyword: <span id="analyzedKeyword" class="text-brand-red font-semibold"></span></p>
+                                <p class="text-xs text-emerald-400 mt-1"><i class="fa-solid fa-circle-info"></i> Simulation Analysis Complete</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/8801836981845?text=I%20just%20ran%20an%20SEO%20audit%20and%20need%20a%20full%20report." target="_blank" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold text-white text-xs uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Get Full Free Report
+                        </a>
+
+                    </div>
+
+                    <!-- Breakdown Cards -->
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-black/50 border border-brand-cardBorder">
+                            <span class="text-xs text-brand-muted">On-Page Score</span>
+                            <p class="text-lg font-bold text-white mt-1 flex items-center justify-between">
+                                <span id="onPageScore">72/100</span>
+                                <i class="fa-solid fa-file-code text-brand-red text-sm"></i>
+                            </p>
+                            <p class="text-[11px] text-zinc-400 mt-2">H1 tags and meta descriptions need optimization.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-black/50 border border-brand-cardBorder">
+                            <span class="text-xs text-brand-muted">Technical Performance</span>
+                            <p class="text-lg font-bold text-white mt-1 flex items-center justify-between">
+                                <span id="techScore">64/100</span>
+                                <i class="fa-solid fa-bolt text-amber-400 text-sm"></i>
+                            </p>
+                            <p class="text-[11px] text-zinc-400 mt-2">Mobile loading speed can be improved by 35%.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-black/50 border border-brand-cardBorder">
+                            <span class="text-xs text-brand-muted">Backlink Profile</span>
+                            <p class="text-lg font-bold text-white mt-1 flex items-center justify-between">
+                                <span id="linkScore">58/100</span>
+                                <i class="fa-solid fa-link text-blue-400 text-sm"></i>
+                            </p>
+                            <p class="text-[11px] text-zinc-400 mt-2">Domain authority needs high quality backlinks.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Growth Case Studies / Results Section -->
+    <section id="results" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-red font-bold text-sm tracking-widest uppercase">Case Studies & Proof</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    বাস্তব প্রজেক্টের ফলাফল ও সাকসেস স্টোরি
+                </h2>
+                <p class="text-brand-muted text-base">
+                    শুধুমাত্র মুখের কথায় নয়, দেখুন কিভাবে আমরা বিভিন্ন ওয়েবসাইটের অর্গানিক সার্চ ট্রাফিক বহুগুণ বৃদ্ধি করেছি।
+                </p>
+            </div>
+
+            <!-- Showcase Case Cards -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- Case Study 1 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-brand-red font-bold uppercase tracking-wider">E-Commerce BD</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">Fashion Store SEO Growth</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-bold text-sm">
+                            +350% Sales
+                        </span>
+                    </div>
+
+                    <p class="text-brand-muted text-sm leading-relaxed">
+                        টেকনিক্যাল ক্যাটাগরি পেজ স্ট্রাকচার রি-ডিজাইন ও হাই সার্চ ভলিউম লং-টেইল কিওয়ার্ড অন-পেজ প্রয়োগ করে ৮ মাসে অর্গানিক ট্রাফিক ৫০k/মাস অতিক্রম করেছে।
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 p-4 rounded-xl bg-black/40 border border-brand-cardBorder text-center">
+                        <div>
+                            <p class="text-xs text-brand-muted">Before SEO</p>
+                            <p class="text-xl font-bold text-red-400">3,200 Monthly</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-brand-muted">After SEO</p>
+                            <p class="text-xl font-bold text-emerald-400">54,000+ Monthly</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs text-brand-muted pt-2">
+                        <span><i class="fa-solid fa-check text-brand-red mr-1"></i> Top 3 Keywords Positioned</span>
+                        <span>Timeframe: 6 Months</span>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="glass-panel p-8 rounded-2xl border border-brand-cardBorder space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-brand-red font-bold uppercase tracking-wider">Local Business</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">Dental Clinic Google Map Rank</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-bold text-sm">
+                            #1 Map Pack
+                        </span>
+                    </div>
+
+                    <p class="text-brand-muted text-sm leading-relaxed">
+                        গুগল বিজনেস প্রোফাইল অপটিমাইজেশন, লোকাল সাইটেশন ও জিও-ট্যাগড কন্টেন্ট দিয়ে মাত্র ৩ মাসে লোকাল ফোন কল ও এপয়েন্টমেন্ট ৫০০% বাড়ানো হয়েছে।
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 p-4 rounded-xl bg-black/40 border border-brand-cardBorder text-center">
+                        <div>
+                            <p class="text-xs text-brand-muted">Calls Before</p>
+                            <p class="text-xl font-bold text-red-400">12 / Month</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-brand-muted">Calls After</p>
+                            <p class="text-xl font-bold text-emerald-400">180+ / Month</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs text-brand-muted pt-2">
+                        <span><i class="fa-solid fa-check text-brand-red mr-1"></i> Google Map #1 Ranking</span>
+                        <span>Timeframe: 3 Months</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Packages Section -->
+    <section id="pricing" class="py-24 bg-brand-cardBg/40 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-red font-bold text-sm tracking-widest uppercase">Pricing Plans</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    এসইও সার্ভিস প্যাকেজসমূহ
+                </h2>
+                <p class="text-brand-muted text-base">
+                    আপনার বিজনেসের বাজেট ও গ্রোথ গোল অনুযায়ী ফ্লেক্সিবল মান্থলি সার্ভিস প্ল্যান বেছে নিন।
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Starter Plan -->
+                <div class="glass-panel p-8 rounded-3xl border border-brand-cardBorder flex flex-col justify-between hover:border-brand-red/40 transition-colors">
+                    <div>
+                        <span class="text-sm font-semibold text-brand-muted">Starter Plan</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">Local / Small Site</h3>
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-white">৳15,000</span>
+                            <span class="text-xs text-brand-muted">/ Month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-brand-muted mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Up to 10 Target Keywords</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Complete On-Page SEO</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Technical Audit & Fixes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Google Business Profile Setup</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Monthly Performance Report</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/8801836981845?text=I%20want%20to%20order%20the%20Starter%20SEO%20Package." target="_blank" class="w-full py-3.5 rounded-xl border border-brand-cardBorder hover:border-brand-red text-center font-bold text-white text-sm transition-all duration-300">
+                        Choose Starter
+                    </a>
+                </div>
+
+                <!-- Business Growth Plan (Highlighted) -->
+                <div class="glass-panel p-8 rounded-3xl border-2 border-brand-red relative flex flex-col justify-between glow-red bg-gradient-to-b from-brand-cardBg via-brand-cardBg to-brand-red/10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-red text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                        Most Popular
+                    </div>
+
+                    <div>
+                        <span class="text-sm font-semibold text-brand-red">Growth Plan</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">Business Expansion</h3>
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-white">৳30,000</span>
+                            <span class="text-xs text-brand-muted">/ Month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-brand-muted mb-8">
+                            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-brand-red"></i> Up to 25 Target Keywords</li>
+                            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-brand-red"></i> Advanced On-Page & Schema</li>
+                            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-brand-red"></i> High DR Backlinks Strategy</li>
+                            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-brand-red"></i> Core Web Vitals Optimization</li>
+                            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-brand-red"></i> Competitor Backlink Reversal</li>
+                            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-brand-red"></i> Bi-Weekly Video Call Update</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/8801836981845?text=I%20want%20to%20order%20the%20Business%20Growth%20SEO%20Package." target="_blank" class="w-full py-3.5 rounded-xl bg-brand-red hover:bg-brand-redHover text-center font-bold text-white text-sm transition-all duration-300 shadow-lg shadow-brand-red/40">
+                        Choose Growth
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="glass-panel p-8 rounded-3xl border border-brand-cardBorder flex flex-col justify-between hover:border-brand-red/40 transition-colors">
+                    <div>
+                        <span class="text-sm font-semibold text-brand-muted">Enterprise</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">E-Commerce & Scale</h3>
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-white">Custom</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-brand-muted mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Unlimited Keyword Targeting</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> E-commerce Architecture SEO</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> Dedicated Digital PR & Outreach</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red"></i> 24/7 Priority WhatsApp Support</li>
+                        </ul>
+                    </div>
+                    <a href="tel:01836981845" class="w-full py-3.5 rounded-xl border border-brand-cardBorder hover:border-brand-red text-center font-bold text-white text-sm transition-all duration-300">
+                        Call for Custom Quote
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Direct Contact Information -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-red font-bold text-sm tracking-widest uppercase">Get In Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+                            আসুন আপনার বিজনেস গ্রোথ নিয়ে কথা বলি।
+                        </h2>
+                        <p class="text-brand-muted text-sm mt-3">
+                            ওয়েবসাইটের বর্তমান অবস্থা রিভিউ বা সরাসরি কনসালটেশনের জন্য নিচের মাধ্যমে যোগাযোগ করতে পারেন।
+                        </p>
+                    </div>
+
+                    <!-- Direct Channels -->
+                    <div class="space-y-4">
+                        
+                        <!-- Phone -->
+                        <a href="tel:01836981845" class="p-5 rounded-2xl glass-panel border border-brand-cardBorder hover:border-brand-red/50 transition-all duration-300 flex items-center gap-5 group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl group-hover:bg-brand-red group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-brand-muted">Direct Phone Call</p>
+                                <p class="text-xl font-extrabold text-white">01836981845</p>
+                            </div>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/8801836981845" target="_blank" class="p-5 rounded-2xl glass-panel border border-brand-cardBorder hover:border-emerald-500/50 transition-all duration-300 flex items-center gap-5 group">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-brand-muted">Instant WhatsApp Chat</p>
+                                <p class="text-xl font-extrabold text-white">+880 1836-981845</p>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <div class="p-5 rounded-2xl glass-panel border border-brand-cardBorder flex items-center gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-brand-muted">Email Support</p>
+                                <p class="text-base font-bold text-white">contact@seoexpert.com.bd</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Interactive Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-cardBorder">
+                        <h3 class="text-2xl font-bold text-white mb-6">একটি মেসেজ পাঠান</h3>
+                        
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-brand-muted font-medium mb-1">আপনার নাম</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-black/60 border border-brand-cardBorder text-white text-sm focus:outline-none focus:border-brand-red">
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-brand-muted font-medium mb-1">ফোন নম্বর</label>
+                                    <input type="tel" required placeholder="017XXXXXXXX" class="w-full px-4 py-3 rounded-xl bg-black/60 border border-brand-cardBorder text-white text-sm focus:outline-none focus:border-brand-red">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-brand-muted font-medium mb-1">ওয়েবসাইট লিংক (যদি থাকে)</label>
+                                <input type="url" placeholder="https://example.com" class="w-full px-4 py-3 rounded-xl bg-black/60 border border-brand-cardBorder text-white text-sm focus:outline-none focus:border-brand-red">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-brand-muted font-medium mb-1">আপনার প্রজেক্টের বিবরণ</label>
+                                <textarea rows="4" required placeholder="আপনার কি কি সার্ভিস প্রয়োজন বলুন..." class="w-full px-4 py-3 rounded-xl bg-black/60 border border-brand-cardBorder text-white text-sm focus:outline-none focus:border-brand-red"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-brand-red hover:bg-brand-redHover text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-brand-red/30">
+                                মেসেজ পাঠান <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-cardBorder py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-red flex items-center justify-center font-bold text-white text-sm">
+                    S
+                </div>
+                <span class="text-sm font-bold tracking-wider text-white">SEO EXPERT portfolio</span>
+            </div>
+
+            <p class="text-xs text-brand-muted text-center">
+                &copy; 2026 SEO Expert. All Rights Reserved. Call: <a href="tel:01836981845" class="text-brand-red underline">01836981845</a>
+            </p>
+
+            <div class="flex gap-4 text-brand-muted text-lg">
+                <a href="https://wa.me/8801836981845" class="hover:text-emerald-400"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Custom Floating WhatsApp Action Button -->
+    <a href="https://wa.me/8801836981845?text=Hi!%20I%20am%20interested%20in%20your%20SEO%20Services." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 transition-transform duration-300 hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Notification Toast Box -->
+    <div id="toast" class="fixed top-24 right-6 glass-panel border border-brand-red text-white px-6 py-4 rounded-xl hidden z-50 shadow-2xl text-sm flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <span id="toastMsg">Message sent successfully!</span>
+    </div>
+
+    <!-- Application Scripting -->
+    <script>
+        // Mobile Navigation Drawer Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+            });
+        });
+
+        // SEO Audit Simulator Logic
+        function runAuditSimulation(e) {
+            e.preventDefault();
+            const urlInput = document.getElementById('auditUrl').value;
+            const keywordInput = document.getElementById('auditKeyword').value;
+            const btn = document.getElementById('auditBtn');
+            const results = document.getElementById('auditResults');
+
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Analyzing...`;
+            btn.disabled = true;
+
+            // Extract Clean Domain Name for Display
+            let domain = urlInput.replace(/(^\w+:|^)\/\//, '').replace('www.', '').split('/')[0];
+
+            setTimeout(() => {
+                btn.innerHTML = `<span>Analyze Now</span> <i class="fa-solid fa-magnifying-glass"></i>`;
+                btn.disabled = false;
+                
+                results.classList.remove('hidden');
+                document.getElementById('analyzedDomain').innerText = domain;
+                document.getElementById('analyzedKeyword').innerText = keywordInput;
+
+                // Random Score Calculation for Demo Simulation
+                const totalScore = Math.floor(Math.random() * 20) + 72; // 72 to 92 range
+                const strokeVal = totalScore;
+                
+                document.getElementById('scoreCircle').style.strokeDasharray = `${strokeVal}, 100`;
+                document.getElementById('scoreText').innerText = `${totalScore}%`;
+
+                // Scroll smoothly to results
+                results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 1200);
+        }
+
+        // Contact Form Handling Trigger
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('আপনার মেসেজ সফলভাবে পাঠানো হয়েছে! শীঘ্রই যোগাযোগ করা হবে।');
+            e.target.reset();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
